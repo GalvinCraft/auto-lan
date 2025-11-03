@@ -3,14 +3,14 @@
 	"id": "auto-lan",
 	"version": "${version}",
 	"name": "auto-lan",
-	"description": "Opens up a world to LAN automatically - cut the manual work!\n\n",
+	"description": "Opens up a world to LAN automatically - cut the manual work!",
 	"authors": [
 		"GalvinPython!"
 	],
 	"contact": {
 		"homepage": "https://github.com/GalvinCraft/auto-lan",
 		"sources": "https://github.com/GalvinCraft/auto-lan",
-		"issues": "https://github.com/GalvinCraft/auto-lan"
+		"issues": "https://github.com/GalvinCraft/auto-lan/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/auto-lan/icon.png",
@@ -22,7 +22,7 @@
 	},
 	"depends": {
 		"fabricloader": ">=0.16",
-		"minecraft": "~1.21",
+		"minecraft": "1.21.10",
 		"java": ">=21",
 		"fabric-api": "*"
 	}
