@@ -6,7 +6,7 @@ With AutoLan, your singleplayer world will automatically open to LAN whenever yo
 
 # A little video demonstration
 
-[Watch the video](https://www.youtube.com/watch?v=/dVND587-MtI)
+[Watch the video](https://www.youtube.com/watch?v=dVND587-MtI)
 
 # How to use
 Just install the mod, and whenever you open a singleplayer world, AutoLan will start working automatically
