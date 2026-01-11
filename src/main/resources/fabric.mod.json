@@ -17,13 +17,16 @@
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-			"me.imgalvin.Autolan"
+			"me.imgalvin.autolan.Autolan"
 		]
 	},
 	"depends": {
 		"fabricloader": ">=0.16",
-		"minecraft": "1.21.10",
+		"minecraft": "1.21.11",
 		"java": ">=21",
 		"fabric-api": "*"
-	}
+	},
+	"mixins": [
+		"autolan.mixins.json"
+	]
 }
