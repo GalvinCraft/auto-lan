@@ -15,6 +15,4 @@ Just install the mod, and whenever you open a singleplayer world, AutoLan will s
 I have another mod, [Force Port](https://modrinth.com/mod/forceport), which allows you to configure which port you want your LAN server to run on. This is useful if you want to run multiple servers at once, or for added security.
 
 # Supported versions
-AutoTorcher is available for Minecraft versions 1.21.10 and above!
-
 Due to the frequency of Minecraft updates now, each Minecraft version has its own .jar file. This is mainly to prevent crashes from each minor update.
