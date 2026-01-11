@@ -31,12 +31,26 @@ public class AutoLanMixin {
             return;
         }
 
+        // Get mode of the world
+        GameMode gameMode = null;
+        try {
+            gameMode = server.getSaveProperties().getGameMode();
+        } catch (Exception e) {
+            try {
+                client.player.sendMessage(
+                        Text.literal("Failed to get game mode: " + e.getMessage()).formatted(net.minecraft.util.Formatting.RED),
+                        false
+                );
+            } catch (Throwable ignored) {
+            }
+        }
+
         int port = findLocalPort();
         try {
-            server.openToLan(GameMode.CREATIVE, true, port);
+            server.openToLan(gameMode, true, port);
             autolan$opened = true;
             client.player.sendMessage(
-                    Text.literal("Opened to LAN on port " + port).formatted(net.minecraft.util.Formatting.GREEN),
+                    Text.literal("Opened to LAN on port " + port + " in mode: " + gameMode + ". Note: LAN worlds automatically open with cheats enabled. This will be addressed in a future update.").formatted(net.minecraft.util.Formatting.GREEN),
                     false
             );
         } catch (Exception e) {
