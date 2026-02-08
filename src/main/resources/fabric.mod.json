@@ -25,5 +25,8 @@
 		"minecraft": "26.1-alpha.6",
 		"java": ">=25",
 		"fabric-api": "*"
-	}
+	},
+	"mixins": [
+		"autolan.client.mixins.json"
+	]
 }

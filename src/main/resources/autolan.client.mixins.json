@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "me.imgalvin.Mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "PublishLANServerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
