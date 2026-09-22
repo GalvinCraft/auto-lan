@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 @Mixin(MinecraftServer.class)
 public abstract class PublishLANServerMixin {
     @Shadow
-    public abstract boolean publishServer(MinecraftServer.MultiplayerScope targetMultiplayerScope, @Nullable GameType gameMode, boolean allowCommands, int port);
+    public abstract boolean publishServer(MinecraftServer.MultiplayerScope targetMultiplayerScope, boolean allowCommands, int port);
 
     @Shadow
     @Final
@@ -47,7 +47,7 @@ public abstract class PublishLANServerMixin {
                 // Back to the main server thread for the actual logic
                 server.execute(() -> {
                     int port = HttpUtil.getAvailablePort();
-                    boolean success = publishServer(MinecraftServer.MultiplayerScope.LAN, GameType.CREATIVE, true, port);
+                    boolean success = publishServer(MinecraftServer.MultiplayerScope.LAN, true, port);
 
                     if (success) {
                         server.getPlayerList().broadcastSystemMessage(
