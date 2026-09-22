@@ -5,7 +5,7 @@
 	"name": "auto-lan",
 	"description": "Opens up a world to LAN automatically - cut the manual work!",
 	"authors": [
-		"GalvinPython!"
+		"GalvinPython"
 	],
 	"contact": {
 		"homepage": "https://github.com/GalvinCraft/auto-lan",
@@ -22,7 +22,7 @@
 	},
 	"depends": {
 		"fabricloader": ">=0.16",
-		"minecraft": "26.2-alpha.3",
+		"minecraft": "26.2-alpha.8",
 		"java": ">=25",
 		"fabric-api": "*"
 	},
