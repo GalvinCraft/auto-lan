@@ -29,6 +29,21 @@ dependencies {
 
 }
 
+// Keep the standalone JVM regression separate from framework-based unit tests.
+sourceSets {
+    schedulerTest {
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
+}
+
+tasks.register('schedulerShutdownTest', JavaExec) {
+    dependsOn classes, schedulerTestClasses
+    classpath = sourceSets.schedulerTest.runtimeClasspath
+    mainClass = 'me.imgalvin.Mixin.SchedulerShutdownTest'
+}
+
+check.dependsOn schedulerShutdownTest
+
 processResources {
     inputs.property "version", project.version
 

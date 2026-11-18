@@ -29,7 +29,12 @@ public abstract class PublishLANServerMixin {
     private static Logger LOGGER;
     // Scheduler to check for connection readiness without blocking the main thread
     @Unique
-    private static final ScheduledExecutorService SCHEDULER = Executors.newSingleThreadScheduledExecutor();
+    private static final ScheduledExecutorService SCHEDULER = Executors.newSingleThreadScheduledExecutor(task -> {
+        Thread thread = new Thread(task, "auto-lan-publisher");
+        // The shared scheduler must not keep the game alive after its main threads exit.
+        thread.setDaemon(true);
+        return thread;
+    });
 
     // Inject at the end of loadLevel
     @Inject(at = @At("TAIL"), method = "loadLevel")
