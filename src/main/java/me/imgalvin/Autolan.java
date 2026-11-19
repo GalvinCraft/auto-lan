@@ -2,6 +2,7 @@ package me.imgalvin;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.HttpUtil;
@@ -24,11 +25,11 @@ public class Autolan implements ClientModInitializer {
 				int port = HttpUtil.getAvailablePort();
 				if (server.publishServer(MinecraftServer.MultiplayerScope.LAN, true, port)) {
 					server.getPlayerList().broadcastSystemMessage(
-							Component.literal("§aOpened to LAN on port " + port), false);
+							Component.literal("Opened to LAN on port " + port).withStyle(ChatFormatting.GREEN), false);
 					LOGGER.info("Successfully opened to LAN on port {}", port);
 				} else {
 					server.getPlayerList().broadcastSystemMessage(
-							Component.literal("§cFailed to open to LAN!"), false);
+							Component.literal("Failed to open to LAN!").withStyle(ChatFormatting.RED), false);
 					LOGGER.error("Failed to open to LAN on port {}", port);
 				}
 			});
