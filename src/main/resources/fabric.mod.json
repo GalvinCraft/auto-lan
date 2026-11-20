@@ -24,9 +24,6 @@
 		"fabricloader": ">=0.19.3",
 		"minecraft": "26.3",
 		"java": ">=25",
-		"fabric-api": "*"
-	},
-	"mixins": [
-		"autolan.client.mixins.json"
-	]
+		"fabric-api": ">=0.161.0+26.3"
+	}
 }
